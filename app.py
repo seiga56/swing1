@@ -216,15 +216,12 @@ if uploaded_file is not None:
             fig_hip = plot_comparison(df_ref, df_user, 'Hip_Tilt', '腰の傾き変化 (Hip Tilt)')
             st.pyplot(fig_hip)
 
-# --- 修正後のコード (一時ファイル削除処理を無効化) ---
+# --- 修正後のコード (process_video_for_analysis 関数の戻り値部分) ---
 
-#            # 一時ファイルのクリーンアップ
-#            if os.path.exists(temp_user_path):
-#                os.remove(temp_user_path)
-#            if os.path.exists(ref_video_path):
-#                os.remove(ref_video_path)
-#            if os.path.exists(user_video_path):
-#                os.remove(user_video_path)                            
+    df = pd.DataFrame(data_to_save)
+    
+    # 修正：動画ファイルパスの代わりに None を返すようにする
+    return df, None # 👈 None を返すように修正                          
         else:
             st.error("動画解析中にエラーが発生しました。動画ファイルが正しい形式か確認してください。")
             
