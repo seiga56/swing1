@@ -187,18 +187,17 @@ if uploaded_file is not None:
 
         if df_ref is not None and df_user is not None:
             
-            # --- 結果の表示 ---
+           # --- 結果の表示 ---
             st.header("1. 解析動画の比較")
             col1, col2 = st.columns(2)
             
             with col1:
                 st.subheader("手本スイング (リファレンス)")
-                st.video(ref_video_path)
+#                st.video(ref_video_path) # 👈 この行をコメントアウト
             
             with col2:
                 st.subheader("自分のスイング (解析済み)")
-                st.video(user_video_path)
-
+#                st.video(user_video_path) # 👈 この行をコメントアウト
             st.header("2. 自動フィードバック")
             feedback = generate_swing_feedback(df_ref, df_user)
             st.markdown(feedback)
