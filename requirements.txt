@@ -1,6 +1,6 @@
 streamlit
 mediapipe
-opencv-python
+opencv-python-headless  # 👈 'opencv-python'から'opencv-python-headless'に変更
 numpy
 pandas
 matplotlib
